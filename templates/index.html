@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gene Lookup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Search Ensambl: homo_sapiens_core_98_38</h1>
+    <p>Please input search term:</p>
+        <form method="POST">
+            <input type="text" name="text">
+            <p>Please input output limit (default=30):</p>
+            <input type="text" name="textlim">
+            <input type="submit" name="button" value="Submit">
+        </form>
+    <br />
+    <hr>
+
+    <div class="out">
+        {% for i in y %}
+        <p>{{ i }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
