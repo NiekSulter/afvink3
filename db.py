@@ -1,4 +1,6 @@
 import mysql.connector
+from flask import Markup
+
 
 def load_genes(var, lim):
     if lim == '':
@@ -14,12 +16,9 @@ def load_genes(var, lim):
 
     results = []
     for i in cursor:
-        results.append(i[0])
+        x = i[0]
+        if var in x:
+           x = x.replace(var, Markup('<b>' + var + '</b>'))
+        results.append(x)
 
     return results
-
-if __name__ == '__main__':
-    x = 'zinc'
-    y = load_genes(x)
-    for i in y:
-        print(i)

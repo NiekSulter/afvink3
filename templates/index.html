@@ -19,7 +19,7 @@
 
     <div class="out">
         {% for i in y %}
-        <p>{{ i }}</p>
+            <p>{{ i | safe}}</p>
         {% endfor %}
     </div>
 </body>

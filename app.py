@@ -24,7 +24,7 @@ def convert():
         inp = request.form['text']
         lim = request.form['textlim']
         y = load_genes(inp, lim)
-        return render_template('index.html', y=y)
+        return render_template('index.html', y=y, inp=inp)
 
 
 if __name__ == '__main__':
